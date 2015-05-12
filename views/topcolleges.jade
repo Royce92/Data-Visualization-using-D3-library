@@ -1,0 +1,14 @@
+extends layout
+block content
+   h2 List of all Colleges
+   table.table.table-hover
+      each college in colleges
+         tr
+            td=college.INSTNM
+            td=college.TOTAL
+
+      p
+         #topten.label-success
+         script(src='/js/lib/c3.min.js')
+         script(src='/js/lib/d3.min.js')
+         script(src='/js/lib/topten.js')
