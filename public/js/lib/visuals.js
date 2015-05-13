@@ -42,7 +42,13 @@ var tuitionchart = c3.generate({
     data: {
         url: window.location.href + '/tuition',
         mimeType: 'json',
-        type: 'bar'
+        axes: {
+        data: 'y2' // ADD
+        
+}
+
     },
+
+
 
 });
