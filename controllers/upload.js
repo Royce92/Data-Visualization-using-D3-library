@@ -7,12 +7,29 @@ var College = require('../models/record');
 
 exports.index = function(req, res) {
     res.render('upload');
-    csvParser(records)
-     .from.stream(fs.createReadStream('./csv/data.csv'), { columns: true })
-     .on('record', function (row, index) {
-      records.push(row);
-      console.log(row);
-      }).on('end', function (count)
+};
+
+exports.parseCSV = function(req, res, next){
+    console.log(req.files);
+
+
+fs.readFile(fs.createReadStream('./csv/hd2013.csv'), {
+}, function(err, IData){
+    if(err){
+        console.log(err);
+    }
+    csvParser(IData, {
+        delimiter: ','
+    }, function(err, data){
+        if(err){
+            console.log(err)
+        } else {
+            req.parseData = data;
+            next()
+        }
+    });
+});
+};
 
 exports.infoCollege = function(req, res){
     var data = req.parseData;
