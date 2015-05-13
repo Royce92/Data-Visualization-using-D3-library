@@ -1,5 +1,5 @@
-var donut = c3.generate({
-    bindto: '#donut',
+var gender = c3.generate({
+    bindto: '#gender',
     data: {
         url: window.location.href + '/gender-information',
         mimeType: 'json',
@@ -44,7 +44,7 @@ var tuitionchart = c3.generate({
         mimeType: 'json',
         axes: {
         data: 'y2' // ADD
-        
+
 }
 
     },
