@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema; 
+var Schema = mongoose.Schema;
 
 /**
  * Record Schema
@@ -12,7 +12,7 @@ var Record = new Schema({
     STABBR: String,
     ZIP: Number,
     FIPS: Number
-    CHFNM: Number,
+    CHFNM: String,
     OBEREG: String,
     CHFTITLE: String,
     GENTELE: Number,
@@ -71,4 +71,4 @@ var Record = new Schema({
 
 });
 
-mongoose.model('Record', Record); 
+mongoose.model('Record', Record);
