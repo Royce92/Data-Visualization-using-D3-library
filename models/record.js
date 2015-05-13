@@ -1,21 +1,18 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-/**
- * Record Schema
- */
-var Record = new Schema({
+var collegeSchema = new mongoose.Schema({
     UNITID: Number,
     INSTNM: String,
     ADDR: String,
     CITY: String,
     STABBR: String,
-    ZIP: Number,
-    FIPS: Number
+    ZIP: String,
+    FIPS: Number,
+    OBEREG: Number,
     CHFNM: String,
-    OBEREG: String,
     CHFTITLE: String,
-    GENTELE: Number,
+
+    GENETELE: Number,
     FAXTELE: Number,
     EIN: Number,
     OPEID: Number,
@@ -25,6 +22,7 @@ var Record = new Schema({
     FAIDURL: String,
     APPLURL: String,
     NPRICURL: String,
+
     SECTOR: Number,
     ICLEVEL: Number,
     CONTROL: Number,
@@ -35,15 +33,18 @@ var Record = new Schema({
     DEGGRANT: Number,
     HBCU: Number,
     HOSPITAL: Number,
+
     MEDICAL: Number,
     TRIBAL: Number,
     LOCALE: Number,
     OPENPUBL: Number,
-    ACT: Number,
+    ACT: String,
     NEWID: Number,
     DEATHYR: Number,
-    CLOSEDAT: Number,
+    CLOSEDAT: String,
     CYACTIVE: Number,
+    POSTSEC: Number,
+
     PSEFLAG: Number,
     PSET4FLG: Number,
     RPTMTH: Number,
@@ -53,8 +54,11 @@ var Record = new Schema({
     CCIPUG: Number,
     CCIPGRAD: Number,
     CCUGPROF: Number,
+    CCENRPRF: Number,
+
     CCSIZSET: Number,
     CARNEGIE: Number,
+    LANDGRNT: Number,
     INSTSIZE: Number,
     CBSA: Number,
     CBSATYPE: Number,
@@ -62,13 +66,18 @@ var Record = new Schema({
     NECTA: Number,
     F1SYSTYP: Number,
     F1SYSNAM: String,
+
     F1SYSCOD: Number,
     COUNTYCD: Number,
     COUNTYNM: String,
     CNGDSTCD: Number,
     LONGITUD: Number,
     LATITUDE: Number,
-
+    __v: Number,
+    GENDER: Object,
+    TOTAL: Number,
+    TUITION: Array
 });
 
-mongoose.model('Record', Record);
+var College = mongoose.model('College', collegeSchema);
+module.exports = College;
