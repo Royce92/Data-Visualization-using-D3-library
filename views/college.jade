@@ -1,34 +1,33 @@
 extends layout
 block content
     .row
-        .col-md-6
+        .col-md-12
             table.table.table-bordered.text-left
                 thead
-                    h3.alert-info.text-center.well-lg #{title} Details
+                    h3 #{title} Details
                 each val, key in college
                     tr
                         td.lead=key
                         td=val
-        .col-md-5.col-md-offset-1
+        .col-md-12
             table.table.table-bordered.text-left
                 thead
-                    h3.alert-info.text-center.well-lg College Gender Distribution
+                    h3.alert-danger.text-center.well-lg College Gender Distribution
                     tr
-                        p.lead Gender Info Percentage
+                        p.lead Gender Percentage
 
                     tr
-                        #donut.label-success
+                        #gender
                         script(src='/js/lib/c3.min.js')
                         script(src='/js/lib/d3.min.js')
                         script(src='/js/lib/visuals.js')
                     tr
 
-                        p.lead Gender Information Numbers
+                        p.lead Gender Information
 
                     tr
-                        #chart.label-info
+                        #chart
 
                     tr
                         p.lead Enrollment Data
-                        #tuitionchart.label-success
-
+                        #tuitionchart
